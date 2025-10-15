@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Smart Exam</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #000080, #906126);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      color: #333;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      padding: 30px;
+    }
+
+    h2 {
+      color: #000080;
+      text-align: center;
+    }
+
+    .exam-list {
+      display: grid;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .exam-card {
+      border: 2px solid #906126;
+      border-radius: 12px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .exam-card h3 {
+      margin: 0;
+      color: #000080;
+    }
+
+    .exam-card p {
+      margin: 8px 0;
+      color: #555;
+    }
+
+    .exam-card button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #906126;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .exam-card button:hover {
+      background-color: #000080;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #ddd;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>📚 Smart Exam - Dashboard Siswa</header>
+
+  <div class="container">
+    <h2 id="welcome-text">Selamat Datang!</h2>
+    <p style="text-align: center;">Pilih ujian yang ingin kamu kerjakan:</p>
+
+    <div class="exam-list">
+      <div class="exam-card">
+        <h3>Ujian Matematika</h3>
+        <p>Jumlah Soal: 10</p>
+        <p>Durasi: 30 menit</p>
+        <button onclick="mulaiUjian('Matematika')">Mulai Ujian</button>
+      </div>
+
+      <div class="exam-card">
+        <h3>Ujian Bahasa Indonesia</h3>
+        <p>Jumlah Soal: 10</p>
+        <p>Durasi: 25 menit</p>
+        <button onclick="mulaiUjian('Bahasa Indonesia')">Mulai Ujian</button>
+      </div>
+
+      <div class="exam-card">
+        <h3>Ujian IPA</h3>
+        <p>Jumlah Soal: 10</p>
+        <p>Durasi: 35 menit</p>
+        <button onclick="mulaiUjian('IPA')">Mulai Ujian</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2025 Smart Exam - Dibuat oleh Khanza</footer>
+
+  <script>
+    // Ambil nama pengguna dari localStorage
+    const username = localStorage.getItem('username');
+
+    // Cek apakah ada nama
+    if (username) {
+      document.getElementById('welcome-text').textContent = `Selamat Datang, ${username}! 🎉`;
+    } else {
+      // Kalau belum login, arahkan ke halaman login
+      window.location.href = 'login.html';
+    }
+
+    // Fungsi tombol mulai ujian
+    function mulaiUjian(mapel) {
+      alert(`Ujian ${mapel} dimulai! Semangat ya 💪`);
+      // Bisa diarahkan ke halaman ujian nanti
+      // window.location.href = 'ujian.html';
+    }
+  </script>
+</body>
+</html>

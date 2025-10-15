@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Exam</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #000080, #906126);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 350px;
+    }
+    h1 {
+      color: #000080;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #444;
+    }
+    button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      font-size: 16px;
+      background-color: #906126;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #000080;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📚 Smart Exam</h1>
+    <p>Selamat datang di Smart Exam! Silakan pilih menu:</p>
+    <button onclick="location.href='login.html'">Login</button>
+    <button onclick="location.href='register.html'">Daftar</button>
+  </div>
+  <script>
+  function login() {
+    const username = document.getElementById('username').value;
+    
+    if (username.trim() === "") {
+      alert("Isi dulu nama pengguna kamu ya!");
+      return;
+    }
+
+    // Simpan nama ke localStorage
+    localStorage.setItem('username', username);
+
+    // Pindah ke halaman dashboard
+    window.location.href = 'dashboard.html';
+  }
+</script>
+</body>
+</html>

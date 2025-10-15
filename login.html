@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Smart Exam</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #000080, #906126);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 350px;
+    }
+    h2 {
+      color: #000080;
+    }
+    input {
+      display: block;
+      width: 90%;
+      padding: 10px;
+      margin: 10px auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #906126;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #000080;
+    }
+    a {
+      color: #906126;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login ke Smart Exam</h2>
+
+    <!-- Input nama siswa -->
+    <input type="text" id="username" placeholder="Nama Siswa" required>
+
+    <!-- Password bisa dibiarkan kosong atau dihapus -->
+    <input type="password" id="password" placeholder="Kata Sandi (opsional)">
+
+    <!-- Tombol login -->
+    <button type="button" onclick="login()">Masuk</button>
+
+    <p>Belum punya akun? <a href="register.html">Daftar di sini</a></p>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById('username').value;
+
+      if (username.trim() === "") {
+        alert("Isi dulu nama kamu ya!");
+        return;
+      }
+
+      // Simpan nama siswa ke localStorage
+      localStorage.setItem('username', username);
+
+      // Pindah ke dashboard
+      window.location.href = 'dashboard.html';
+    }
+  </script>
+</body>
+</html>
